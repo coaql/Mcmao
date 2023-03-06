@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>REGISTER </h1>
+    
+        <form action="/success" method="get">
+            <input name="username" type="text" autofocus required placeholder="Username"></input>
+            <button type="submit">register</button>
+        </form>
+
+        or <a href="/login">LOG IN</a>
+
+{%endblock%}

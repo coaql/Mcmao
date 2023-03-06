@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>LOG In</h1>
+
+    <form action="/home" method="get">
+        <input name="username" type="text" autofocus required placeholder="Username"></input>
+        <button type="submit">register</button>
+    </form>
+
+{%endblock%}
