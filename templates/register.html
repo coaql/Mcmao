@@ -1,13 +1,37 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/reg.css">
+    <title>Signup page</title>
+</head>
+<body>
+    <form action="/success" method="get">
+<div class="main">
+    <h1>Register</h1>
+            <label for="email">Your Email id</label><br>
+            <input type="text" placeholder="Enter email id" name="email" required>
+            <br><br>
+            <label for="username">Your Username</label><br>
+            <input type="text" placeholder="Enter username" name="username" required>
+            <br><br>
+            <label for="pswrd">Your password</label><br>
+            <input type="password" placeholder="Enter Password" name="pswrd" required>
+            <br><br>
+            <label for="repswrd">Confirm password</label><br>
+            <input type="password" placeholder="Enter Re-Password" name="repswrd" required>
+<br><br>
 
-{% block body %}
-    <h1>REGISTER </h1>
-    
-        <form action="/success" method="get">
-            <input name="username" type="text" autofocus required placeholder="Username"></input>
-            <button type="submit">register</button>
-        </form>
-
-        or <a href="/login">LOG IN</a>
-
-{%endblock%}
+<button class="btn btn-primary" type="submit">Create Account</button>
+<p class="Login">Already a member?  <br><a href="/login">Login</a></p>
+          </div>
+       </form>
+     </div>
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>
