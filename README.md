@@ -30,6 +30,11 @@
 #		• hash_pass(text)	#
 #		• goal_id(int)AI,F-key	#
 #		• 			#
+
+	Table goals_of_users
+		. goal
+
+
 #					#
 #	Table goals			#
 #		• goal_id(int)		#
