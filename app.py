@@ -16,9 +16,6 @@ def sucess():
     REGISTER.append(name)
     return f"sucessfully registered."
 
-@app.route("/login")
-def login():
-    return render_template("login.html")
 
 @app.route("/home")
 def home():
