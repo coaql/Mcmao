@@ -15,6 +15,7 @@
 #		2 statements		#
 #		3 goals			#
 #		4 profile		#
+#		5 notes			#
 #					#
 #					#
 # Sql : 				#
@@ -28,8 +29,13 @@
 #		• username(Text)P-key	#
 #		• income(int)		#
 #		• hash_pass(text)	#
-#		• goal_id(int)AI,F-key	#
 #		• 			#
+#					#
+#	Table goals_of_users		#
+#		. goal_id , f-key	#
+#		. user_id, f-key	#
+#					#
+#					#
 #					#
 #	Table goals			#
 #		• goal_id(int)		#
