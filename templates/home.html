@@ -1,7 +1,223 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCMAO</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&style=sharp">
+    <link rel="stylesheet" href="./style.css">
+	
+</head>
+<body>
+    <header>
+		<div class="logo">
+			<img src="logo 2.jpeg">
+		</div>
+		<input type="checkbox" id="nav_check" hidden>
+		<nav>
+			<!--<div class="logo">
+				<img src="logo 2.jpeg" alt="">
+			</div>-->
+			<ul>
+				<li>
+					<a href="" class="active">Home</a>
+				</li>
+				<li>
+					<a href="">Accounts</a>
+				</li>
+				<li>
+					<a href="">Transaction</a>
+				</li>
+				<li>
+					<a href="">Goal</a>
+				</li>
+				<li>
+					<a href="">Settings</a>
+				</li>
+			</ul>
+		</nav>
+		<label for="nav_check" class="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</label>
+	</header>
+	<div class="Dash" style=" margin-left: 20px; margin-top: 20px; font-size: 20px; right: 30px;">
+		<h2 >Dashboard</h2>
+	</div>
+	
+	
+<html>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <canvas id="myChart"></canvas>
 
-{% block body %}
+    <script>
+        
+        const monthlyExpenses = [1000, 1200, 800, 900, 1100, 1300, 1000, 1200, 800, 900, 1100, 1300];
+        const dailySavings = [10, 15, 12, 11, 14, 16, 10, 15, 12, 11, 14, 16];
 
-    welcome {{name}} !
-
-{%endblock%}
+       
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        label: 'Monthly Expenses',
+                        data: monthlyExpenses,
+                        borderColor: 'red',
+                        fill: false
+                    },
+                    {
+                        label: 'Daily Savings',
+                        data: dailySavings,
+                        borderColor: 'blue',
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Monthly Expenses and Daily Savings'
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+	<form style="width: 300px;"> 
+		<h2 style="margin-left: 15px; margin-top: 10px;">Add Transaction</h2>
+		<label for="date" style="margin-left: 15px; font-size: 20px;">Date:</label>
+		<input type="date" id="date" name="date" required style="width: 80%; margin-left: 30px;">
+		
+		<label for="description" style="margin-left: 15px; font-size: 20px;">Description:</label>
+		<input type="text" id="description" name="description" required style="width: 80%; margin-left: 30px;">
+		
+		<label for="amount" style="margin-left: 15px; font-size: 20px;">Amount:</label>
+		<input type="number" id="amount" name="amount" step="0.01" required style="width: 80%; margin-left: 30px;">
+		
+		<label for="category" style="margin-left: 15px; font-size: 20px;">Category:</label>
+		<select id="category" name="category" style="width: 80%; margin-left: 30px;">
+		  <option value="groceries">Groceries</option>
+		  <option value="utilities">Utilities</option>
+		  <option value="entertainment">Entertainment</option>
+		  <option value="travel">Travel</option>
+		</select>
+		
+		<button type="submit" style="margin-bottom: 5px; width: 80%; margin-left: 30px;">Submit</button>
+	  </form>
+	  <div class="transaction-history" style="left: 1020px; position: relative; top: 40px;">
+		<h2>Transaction History</h2>
+		<div class="scroll-container">
+		  <table>
+			<thead>
+			  <tr>
+				<th>Date</th>
+				<th>Transaction Type</th>
+				<th>Amount</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Mar 1, 2023</td>
+				<td>Deposit</td>
+				<td class="incoming">500.00</td>
+			  </tr>
+			  <tr>
+				<td>Feb 28, 2023</td>
+				<td>Withdrawal</td>
+				<td class="outgoing">-100.00</td>
+			  </tr>
+			  <tr>
+				<td>Feb 25, 2023</td>
+				<td>Payment</td>
+				<td class="outgoing">-200.00</td>
+			  </tr>
+			  <tr>
+				<td>Feb 25, 2023</td>
+				<td>Payment</td>
+				<td class="outgoing">-200.00</td>
+			  </tr>
+			  <tr>
+				<td>Feb 25, 2023</td>
+				<td>Payment</td>
+				<td class="incoming">200.00</td>
+			  </tr>
+			  <tr>
+				<td>Feb 25, 2023</td>
+				<td>Payment</td>
+				<td class="outgoing">-200.00</td>
+			  </tr>
+			  <tr>
+				<td>Feb 25, 2023</td>
+				<td>Payment</td>
+				<td class="incoming">200.00</td>
+			  </tr>
+			  <tr>
+				<td>Feb 25, 2023</td>
+				<td>Payment</td>
+				<td class="incoming">200.00</td>
+			  </tr>
+			 
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+	  <div id="new-chart-container" style="width: 400px; position: relative; bottom:800px; right: -200px;">
+		<canvas id="new-pie-chart" style=" position: absolute; top: -40px;"></canvas>
+	  </div>
+	  
+	  <!-- Include the Chart.js library -->
+	  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	  
+	  <script>
+	  // Define the data for the new chart
+	  var newData = {
+		labels: ["Rent", "Food", "Transportation", "Entertainment", "Other"],
+		datasets: [{
+		  data: [400, 200, 300, 100, 250],
+		  backgroundColor: [
+			"#FF6384",
+			"#36A2EB",
+			"#FFCE56",
+			"#4BC0C0",
+			"#E7E9ED"
+		  ]
+		}]
+	  };
+	  
+	  // Create the new pie chart
+	  var newCtx = document.getElementById("new-pie-chart").getContext("2d");
+	  var newPieChart = new Chart(newCtx, {
+		type: "pie",
+		data: newData,
+		options: {
+		  responsive: true,
+		  legend: {
+			position: "right"
+		  },
+		  title: {
+			display: true,
+			text: "New Monthly Expenses"
+		  }
+		}
+	  });
+	  
+	  // Set the new chart container's aspect ratio
+	  var newChartContainer = document.getElementById("new-chart-container");
+	  newChartContainer.style.maxWidth = "600px";
+	  newChartContainer.style.margin = "0 auto";
+	  newChartContainer.style.aspectRatio = "1";
+	  </script>
+	  
+</body>
+</html>
