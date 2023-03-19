@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "layout.html" %}
+{%block head%}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/reg.css">
     <title>Get started</title>
-</head>
-<body>
-    <section class="forms-section">
+{%endblock%}
+{%block body%}
+<section class="forms-section">
         <br><br>
         <h1 class="section-title">M C M A O
       </h1>
@@ -18,12 +17,12 @@
               Login
               <span class="underline"></span>
             </button>
-            <form class="form form-login" action="/home" method="get">
+            <form class="form form-login" action="/login" method="post">
               <fieldset>
-                <legend>Please, enter your email and password for login.</legend>
+                <legend>Please, enter your username and password for login.</legend>
                 <div class="input-block">
-                  <label for="login-email">Username</label>
-                  <input id="login-email" type="Username" name="username" required>
+                  <label for="login-username">Username</label>
+                  <input id="login-username" type="Username" name="username" required autofocuss>
                 </div>
                 <div class="input-block">
                   <label for="login-password">Password</label>
@@ -38,12 +37,12 @@
               Sign Up
               <span class="underline"></span>
             </button>
-            <form class="form form-signup" action="/success" method="get">
+            <form class="form form-signup" action="/register" method="post">
               <fieldset>
-                <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+                <legend>Please, enter your username, password and password confirmation for sign up.</legend>
                 <div class="input-block">
-                  <label for="signup-email">Username</label>
-                  <input id="signup-email" type="Username" name="username" required>
+                  <label for="signup-username">Username</label>
+                  <input id="signup-username" type="Username" name="username" required autofocus>
                 </div>
                 <div class="input-block">
                   <label for="signup-password">Password</label>
@@ -61,5 +60,4 @@
         <script src="/static/reg.js"></script>
       
       </section>
-      </body>
-</html>
+{%endblock%}

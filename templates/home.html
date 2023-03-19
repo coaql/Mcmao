@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "layout.html" %} 
+{%block head%}
     <title>MCMAO</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&style=sharp">
-    <link rel="stylesheet" href="./style.css">
-	
-</head>
-<body>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&style=sharp">
+    <link rel="stylesheet" href="/static/style.css">
+{%endblock%}
+
+{%block body%}
     <header>
 		<div class="logo">
 			<img src="logo 2.jpeg">
@@ -21,19 +17,19 @@
 			</div>-->
 			<ul>
 				<li>
-					<a href="" class="active">Home</a>
+					<a href="" class="active">Dashboard</a>
 				</li>
 				<li>
-					<a href="">Accounts</a>
+					<a href="">Statements</a>
 				</li>
 				<li>
-					<a href="">Transaction</a>
+					<a href="">Goals</a>
 				</li>
 				<li>
-					<a href="">Goal</a>
+					<a href="">Notes</a>
 				</li>
 				<li>
-					<a href="">Settings</a>
+					<a href="">Profile</a>
 				</li>
 			</ul>
 		</nav>
@@ -44,12 +40,10 @@
 		</label>
 	</header>
 	<div class="Dash" style=" margin-left: 20px; margin-top: 20px; font-size: 20px; right: 30px;">
-		<h2 >Dashboard</h2>
+		<h2 id="username" >{{name}}</h2>
 	</div>
 	
-	
-<html>
-<head>
+
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
      <canvas id="myChart"></canvas>
 
@@ -218,6 +212,4 @@
 	  newChartContainer.style.margin = "0 auto";
 	  newChartContainer.style.aspectRatio = "1";
 	  </script>
-	  
-</body>
-</html>
+{%endblock%}
