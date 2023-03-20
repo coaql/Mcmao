@@ -6,14 +6,11 @@
 
 {%block body%}
 
-{% if session["username"] %}
-    you are logged in as {{ session["username"]}} .
-{% else %}
-    you are not logged in. <a href="/register">Log in</a>
+    you are logged in as {{ username }} .
 
-
-
-
+    <form action="/logout"> 
+	    <button type="submit"> Log out</button>
+    </form>
 
 
 <!--
