@@ -7,109 +7,108 @@
 
 {%block body%}
     <header>
-		<div class="logo">
-			<img src="logo 2.jpeg">
+	    <div class="logo"> 
+		    <h1 style="font-family:fantasy">M</h1>
+		    <h1 style="font-family:cursive">c</h1>
+		    <h1 style="font-family:fantasy">M</h1>
+		    <h1 style="font-family:cursive">ao</h1>
 		</div>
-		<input type="checkbox" id="nav_check" hidden>
 		<nav>
-			<!--<div class="logo">
-				<img src="logo 2.jpeg" alt="">
-			</div>-->
 			<ul>
-				<li>
-					<a href="" class="active">Dashboard</a>
-				</li>
-				<li>
-					<a href="">Statements</a>
-				</li>
-				<li>
-					<a href="">Goals</a>
-				</li>
-				<li>
-					<a href="">Notes</a>
-				</li>
-				<li>
-					<a href="">Profile</a>
-				</li>
+				<li><a href="" class="active">Dashboard</a></li>
+				<li><a href="">Statements</a></li>
+				<li><a href="">Goals</a></li>
+				<li><a href="">Notes</a></li>
+				<li><a href="">Profile</a></li>
 			</ul>
 		</nav>
-		<label for="nav_check" class="hamburger">
-			<div></div>
-			<div></div>
-			<div></div>
-		</label>
 	</header>
-	<div class="Dash" style=" margin-left: 20px; margin-top: 20px; font-size: 20px; right: 30px;">
-		<h2 id="username" >{{name}}</h2>
-	</div>
 	
-
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-     <canvas id="myChart"></canvas>
-
-    <script>
-        
+	<div id="content">
+		<div class="left-panel">
+			 <div id="display-stat">
+				<h1>CHART</h1>
+					<ul>
+			 
+					</ul>
+             </div>
+<!--		
+			<div id="chart">
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     			<canvas id="myChart"></canvas>
+    			<script>
         const monthlyExpenses = [1000, 1200, 800, 900, 1100, 1300, 1000, 1200, 800, 900, 1100, 1300];
         const dailySavings = [10, 15, 12, 11, 14, 16, 10, 15, 12, 11, 14, 16];
 
-       
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                datasets: [
-                    {
-                        label: 'Monthly Expenses',
-                        data: monthlyExpenses,
-                        borderColor: 'red',
-                        fill: false
-                    },
-                    {
-                        label: 'Daily Savings',
-                        data: dailySavings,
-                        borderColor: 'blue',
-                        fill: false
-                    }
-                ]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Monthly Expenses and Daily Savings'
-                },
+        type: 'line',
+ 	         data: {
+        	        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                	datasets: [
+                    	{
+                        	label: 'Monthly Expenses',
+                        	data: monthlyExpenses,
+                        	borderColor: 'red',
+                        	fill: false
+                    	},
+                    	{
+                        	label: 'Daily Savings',
+                        	data: dailySavings,
+                        	borderColor: 'blue',
+                        	fill: false
+                    	}
+                		]
+            		},
+            	options: {
+                	title: {
+                    		display: true,
+                    		text: 'Monthly Expenses and Daily Savings'
+                	},
                 scales: {
-                    yAxes: [{
+                    	yAxes: [{
                         ticks: {
                             beginAtZero: true
                         }
-                    }]
+                    	}]
                 }
             }
-        });
+        }):
     </script>
-	<form style="width: 300px;"> 
-		<h2 style="margin-left: 15px; margin-top: 10px;">Add Transaction</h2>
-		<label for="date" style="margin-left: 15px; font-size: 20px;">Date:</label>
-		<input type="date" id="date" name="date" required style="width: 80%; margin-left: 30px;">
+    		</div>
+-->
+		</div>
+
+		<div class="right-panel">
+			<form > 
+		<input type="date" id="date" name="date" required >
 		
-		<label for="description" style="margin-left: 15px; font-size: 20px;">Description:</label>
-		<input type="text" id="description" name="description" required style="width: 80%; margin-left: 30px;">
+		<input type="text" id="description" name="description" placeholder="Description" required >
 		
-		<label for="amount" style="margin-left: 15px; font-size: 20px;">Amount:</label>
-		<input type="number" id="amount" name="amount" step="0.01" required style="width: 80%; margin-left: 30px;">
+		<input type="number" id="amount" name="amount" step="0.01" placeholder="Amount" required >
 		
-		<label for="category" style="margin-left: 15px; font-size: 20px;">Category:</label>
-		<select id="category" name="category" style="width: 80%; margin-left: 30px;">
-		  <option value="groceries">Groceries</option>
-		  <option value="utilities">Utilities</option>
+		<h3 >Category:</h3>
+		<select id="category" name="category" aria-placeholder="Category" required >
+		  <option></option>
+		  <option value="cosmetics">Cosmetics</option>
+		  <option value="clothing">Clothing</option>
+		  <option value="education">Education</option>
 		  <option value="entertainment">Entertainment</option>
+		  <option value="food">Food</option>
+		  <option value="health care">Health Care</option>
+		  <option value="rent">Rent</option>
+		  <option value="subscription">Subscription</option>
 		  <option value="travel">Travel</option>
+
+		  <option value="other">Other</option>
 		</select>
 		
-		<button type="submit" style="margin-bottom: 5px; width: 80%; margin-left: 30px;">Submit</button>
-	  </form>
-	  <div class="transaction-history" style="left: 1020px; position: relative; top: 40px;">
+		<button type="submit" >Add</button>
+	  		</form>
+		</div>
+
+<!--
+<div class="transaction-history" style="left: 1020px; position: relative; top: 40px;">
 		<h2>Transaction History</h2>
 		<div class="scroll-container">
 		  <table>
@@ -166,11 +165,13 @@
 		  </table>
 		</div>
 	  </div>
+-->  
+<!--
 	  <div id="new-chart-container" style="width: 400px; position: relative; bottom:800px; right: -200px;">
 		<canvas id="new-pie-chart" style=" position: absolute; top: -40px;"></canvas>
 	  </div>
 	  
-	  <!-- Include the Chart.js library -->
+	  #comeent Include the Chart.js library
 	  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	  
 	  <script>
@@ -212,4 +213,7 @@
 	  newChartContainer.style.margin = "0 auto";
 	  newChartContainer.style.aspectRatio = "1";
 	  </script>
+-->
+
+
 {%endblock%}

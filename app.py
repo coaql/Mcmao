@@ -32,7 +32,7 @@ def home():
     #check if the user have the session key
     if not session.get("username") :
         return redirect("/register")
-    return render_template("test.html",username = session["username"])
+    return render_template("home.html",username = session["username"])
 
 
 
@@ -51,7 +51,7 @@ def register():
         session["username"] = request.form.get("username")
         session["password"] = request.form.get("password")
         db.execute("INSERT INTO user_auth VALUES (?,?,?)",
-                   session["username"], salt(), session["password"])
+                   session["username"], session["password"], salt())
         return redirect("/")
     return render_template("register.html",status_login = 1, status_register = 1)
 
