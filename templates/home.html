@@ -2,24 +2,24 @@
 {%block head%}
     <title>MCMAO</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&style=sharp">
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/home.css">
+    <script src="static/jquery.js"></script>
+    <script src="static/home.js"></script>
 {%endblock%}
 
 {%block body%}
     <header>
 	    <div class="logo"> 
-		    <h1 style="font-family:fantasy">M</h1>
-		    <h1 style="font-family:cursive">c</h1>
-		    <h1 style="font-family:fantasy">M</h1>
-		    <h1 style="font-family:cursive">ao</h1>
+		    <h1 > MO </h1>
+		    <h2 > McMao </h2>
 		</div>
 		<nav>
 			<ul>
 				<li><a href="" class="active">Dashboard</a></li>
-				<li><a href="">Statements</a></li>
-				<li><a href="">Goals</a></li>
-				<li><a href="">Notes</a></li>
-				<li><a href="">Profile</a></li>
+				<li><a href="/statement">Statements</a></li>
+				<li><a href="/goals">Goals</a></li>
+				<li><a href="/notes">Notes</a></li>
+				<li><a href="/profile">Profile</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -80,27 +80,21 @@
 		</div>
 
 		<div class="right-panel">
-			<form > 
-		<input type="date" id="date" name="date" required >
+			<form id="add-stat" > 
+		<input type="date" id="Date" name="Date" required >
 		
-		<input type="text" id="description" name="description" placeholder="Description" required >
+		<input type="number" id="Amount" name="amount" step="0.01" placeholder="Amount" required >
 		
-		<input type="number" id="amount" name="amount" step="0.01" placeholder="Amount" required >
+		<input type="text" id="Description" name="Description" placeholder="Description" required >
 		
 		<h3 >Category:</h3>
-		<select id="category" name="category" aria-placeholder="Category" required >
+		 <select id="Category" name="Category" aria-placeholder="Category" required >
 		  <option></option>
-		  <option value="cosmetics">Cosmetics</option>
-		  <option value="clothing">Clothing</option>
-		  <option value="education">Education</option>
-		  <option value="entertainment">Entertainment</option>
-		  <option value="food">Food</option>
-		  <option value="health care">Health Care</option>
-		  <option value="rent">Rent</option>
-		  <option value="subscription">Subscription</option>
-		  <option value="travel">Travel</option>
 
-		  <option value="other">Other</option>
+		  {% for option in category %}
+		  <option value="{{option}}">{{option}}</option>
+		  {% endfor %}
+
 		</select>
 		
 		<button type="submit" >Add</button>

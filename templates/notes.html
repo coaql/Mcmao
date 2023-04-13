@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Notes App in JavaScript |</title>
+    <link rel="stylesheet" href="static/notes.css">
+    <link rel="stylesheet" href="static/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Iconscout Link For Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  </head>
+  <body>
+    <header>
+	    <div class="logo"> 
+		    <h1 > MO </h1>
+		    <h2 > McMao </h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/">Dashboard</a></li>
+				<li><a href="/statement">Statements</a></li>
+				<li><a href="/goals">Goals</a></li>
+				<li><a href="" class="active">Notes</a></li>
+				<li><a href="/profile">Profile</a></li>
+			</ul>
+		</nav>
+	</header>
+    <div class="popup-box">
+      <div class="popup">
+        <div class="content">
+          <header>
+            <p></p>
+            <i class="uil uil-times"></i>
+          </header>
+          <form action="#">
+            <div class="row title">
+              <label>Title</label>
+
+              <input type="text" spellcheck="false">
+            </div>
+            <div class="row description">
+              <label>Description</label>
+              <textarea spellcheck="false"></textarea>
+            </div>
+            <label>Reminder</label>
+            <input type="datetime-local"> 
+            <div>
+              
+            </div>
+              <br>
+
+            <button class="add-note"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <li class="add-box">
+        <div class="icon"><i class="uil uil-plus"></i></div>
+        <p>Add new note</p>
+      </li>
+    </div>
+
+    <script src="static/notes.js"></script>
+    
+  </body>
+</html>

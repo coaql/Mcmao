@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  padding: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions a, .actions button {
+  padding: 5px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.actions a.edit {
+  background-color: #2196F3;
+}
+
+.actions a.delete {
+  background-color: #f44336;
+}
+
+.actions a.edit:hover, .actions a.delete:hover, form button:hover {
+  opacity: 0.8;
+}

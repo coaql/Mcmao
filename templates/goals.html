@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Goal</title>
+    <link rel="stylesheet" type="text/css" href="static/home.css">
+    <link rel="stylesheet" type="text/css" href="static/goals.css">
+  </head>
+  <body>
+    <header>
+	    <div class="logo"> 
+		    <h1 > MO </h1>
+		    <h2 > McMao </h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/"> Dashboard</a></li>
+				<li><a href="/statement">Statements</a></li>
+				<li><a href="/goals" class="active">Goals</a></li>
+				<li><a href="/notes">Notes</a></li>
+				<li><a href="/profile">Profile</a></li>
+			</ul>
+		</nav>
+	</header>
+
+    <div class="container">
+      <h1>Add Goals</h1>
+      <form id="add-goal-form">
+        <label for="goal-name">Goal Name:</label>
+        <input type="text" id="goal-name" name="goal-name" required>
+        <label for="goal-description">Goal Description:</label>
+        <textarea id="goal-description" name="goal-description" required></textarea>
+        <label for="goal-start-date">Start Date:</label>
+        <input type="date" id="goal-start-date" name="goal-start-date" required>
+        <label for="goal-end-date">End Date:</label>
+        <input type="date" id="goal-end-date" name="goal-end-date" required>
+        <label for="goal-target-amount">Target Amount:</label>
+        <input type="number" id="goal-target-amount" name="goal-target-amount" min="0" step="0.01" required>
+        <button type="submit">Add Goal</button>
+      </form>
+      <table id="goals-table">
+        <h1>My Goals</h1>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Target Amount</th>
+            <th>Current Progress</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    <script src="static/goals.js"></script>
+  </body>
+</html>

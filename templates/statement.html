@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>statements</title>
+    <link rel="stylesheet" href="static/home.css">
+    <link rel="stylesheet" href="static/statement.css">
+    <script  src="static/jquery.js"></script>
+    <script  src="static/statement.js"></script>
+  </head>
+  <body>
+    <header>
+	    <div class="logo"> 
+		    <h1 >MO</h1>
+		    <h2 >McMao</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/" >Dashboard</a></li>
+				<li><a href="" class="active">Statements</a></li>
+				<li><a href="/goals">Goals</a></li>
+				<li><a href="/notes">Notes</a></li>
+				<li><a href="/profile">Profile</a></li>
+			</ul>
+		</nav>
+	</header>
+    <div class="container">
+
+      <div class="filters">
+
+
+        <div class="filter">  
+	<label for="category">Category:</label>
+	  <select id="category">
+		  <option value="recent">recent</option>
+		  <option value="cosmetics">Cosmetics</option>
+		  <option value="clothing">Clothing</option>
+		  <option value="education">Education</option>
+		  <option value="entertainment">Entertainment</option>
+		  <option value="food">Food</option>
+		  <option value="health care">Health Care</option>
+		  <option value="rent">Rent</option>
+		  <option value="subscription">Subscription</option>
+		  <option value="travel">Travel</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+
+      <div class="filter">
+          <label style="margin-right: 20px;" for="date-range">Date Range:</label>
+          <input style="margin-right: 30px;" type="date" id="from-date" name="from-date">
+          <label style="margin-right: 30px" for="to-date">to:</label>
+          <input style="margin-right: 30px;" type="date" id="to-date" name="to-date">
+      </div>
+	
+	
+      </div>
+	
+      <div class="table-container">
+        <table>
+          <thead style="color: white;">
+            <tr style="background-color: white;">
+              <th>Date</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody style="overflow-y: scroll;">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+          </tbody>
+	</table>
+      </div>
+	
+    </div>
+  </body>
+</html>
