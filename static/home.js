@@ -11,41 +11,40 @@ $(document).ready(function()
 		statement.date = $('#Date').val();
 		statement.category = $('#Category').val();
 		statement.description = $('#Description').val();
+		var msg = "Amount : " + statement.amount + "\n" +
+		 	 "Category : " + statement.category + "\n" +
+		 	 "on Date : " + statement.date + "\n" +
+		 	 "for : " + statement.description
 
-		$.ajax({ data: statement, type :'POST', url :'/ledge'})
-			.done(function(data)
-			{
-				$('tbody')
-					.prepend('<tr><td>'
-						+ data[0].date 
-						+ '</td><td>' 
-						+ data[0].category 
-						+ '</td><td>'
-						+ data[0].amount 
-						+ '</td></tr>'
-					);
-				
-				//alert(data.length);
-			});
+		if (confirm(msg))
+		{
+			$.ajax({ data: statement, type :'POST', url :'/ledge'})
+			$('#add-stat > input').val('');
+			$('#add-stat > select').val('');
+			report();
+		}
 		e.preventDefault();
 	});
-	//report();
+	report();
+	draw_data();
 });
 
-/* 
 
 function report()
 {
-	$.ajax({type:'GET', url:'/ledge'})
+ 
+	$.ajax({data:{"recent":"1"},type:'GET', url:'/ledge'})
 		.done(function (data)
 			{
+				$('tbody > tr').remove();
 				for (i in data)
 				$('tbody')
-					.prepend('<tr><td>'
+					.append('<tr><td class="recent-date">'
 						+ data[i].date 
-						+ '</td><td>' 
+						+ '</td><td class="recent-category">' 
 						+ data[i].category 
-						+ '</td><td>'
+						+ '</td><td class="recent-amount">₹'
+
 						+ data[i].amount 
 						+ '</td></tr>'
 					);
@@ -53,4 +52,3 @@ function report()
 }
 
 
-*/

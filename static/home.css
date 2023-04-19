@@ -25,13 +25,14 @@ header{
 
 nav ul{
    display: flex;
+   margin-top: auto;
 }
 
 nav ul li a{
    color: #212526;
    display: block;
    margin: 0 2px;
-   font-weight: 600;
+   font-weight: inherit;
    padding: 8px 18px;
    transition: 0.2sec;
    border-radius:30px  ;
@@ -46,8 +47,8 @@ nav ul li a.active{
    color: #fff;
 }
 
-
-/*@media only screen and (max-width: 1100px){
+/*
+  @media only screen and (max-width: 1100px){
    header{
       width: 90%;
       padding: 0 20px;
@@ -102,7 +103,8 @@ canvas{
   canvas{
    margin: auto;
   }
-}*/
+} 
+*/
 
  
  label {
@@ -124,24 +126,25 @@ canvas{
  button:hover {
    background-color: #3e8e41;
  }
- /*@media only screen and( max-width: 1000px) {
+ @media only screen and( max-width: 1000px) {
    form{
     margin: auto;
    }
  }
  .transaction-history {
-   margin-left: 80px;
+   /*margin-left: 80px;
    margin-right: 80px;
    margin-bottom: 80px ;
-   padding: 20px;
    width: 300px;
-   border: 1px solid #ccc;
-   border-radius: 20px;
-   background-color: #fff;
-   position: absolute;
    top: 550px;
    left: 90px;;
- }
+ */
+	margin-top: 35px;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	background-color: #fff;
+	padding: 20px;
+}
  
  .transaction-history h2 {
    margin-top: 0;
@@ -154,8 +157,8 @@ canvas{
  }
  
  table {
-   width: 100%;
    border-collapse: collapse;
+   width: min-content;
  }
  
  th, td {
@@ -172,12 +175,8 @@ canvas{
    border-bottom: none;
  }
  
- .incoming {
-   color: green;
- }
- 
- .outgoing {
-   color: red;
+ .recent-amount {
+   font-weight: solid;
  }
  
  @media screen and (max-width: 600px) {
@@ -193,7 +192,7 @@ canvas{
      font-size: 14px;
    }
  }
-*/
+
 
 /* my css */
 
@@ -211,20 +210,17 @@ canvas{
 .logo h2
 {
 	margin: 10px;
-	font-family: fantasy;
+	font-family: silom;
 }
 #content
 {
  display: flex;
+ justify-content:space-evenly;
  margin: 32px 64px;
- border-top: double;
 }
 #content .left-panel
 {
-        border:solid;   
         margin:15px;
-        background-color:#E7E9EB;
-        width: -webkit-fill-available;
 
 }
 #content .right-panel
@@ -255,3 +251,9 @@ canvas{
   font-size: 20px;
   box-shadow: 2.5px 2.5px teal;
 }
+
+#add-stat
+{
+	width: fit-content;
+}
+

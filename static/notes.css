@@ -4,10 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: poppins, sans-serif;
 }
 body{
-  background: black;
 }
 ::selection{
   color: #fff;
@@ -28,7 +27,7 @@ body{
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 .add-box, .icon, .bottom-content, 
-.popup, header, .settings .menu li{
+.popup, .settings .menu li{
   display: flex;
   align-items: center;
   justify-content: space-between;

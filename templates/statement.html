@@ -30,27 +30,21 @@
 
         <div class="filter">  
 	<label for="category">Category:</label>
-	  <select id="category">
-		  <option value="recent">recent</option>
-		  <option value="cosmetics">Cosmetics</option>
-		  <option value="clothing">Clothing</option>
-		  <option value="education">Education</option>
-		  <option value="entertainment">Entertainment</option>
-		  <option value="food">Food</option>
-		  <option value="health care">Health Care</option>
-		  <option value="rent">Rent</option>
-		  <option value="subscription">Subscription</option>
-		  <option value="travel">Travel</option>
-            <option value="other">Other</option>
+	  <select id="category" onchange="filter()">
+		<option value="recent">Recent</option>
+		  {% for option in category %}
+		  <option value="{{option}}">{{option}}</option>
+		  {% endfor %}
+
           </select>
         </div>
 
 
       <div class="filter">
           <label style="margin-right: 20px;" for="date-range">Date Range:</label>
-          <input style="margin-right: 30px;" type="date" id="from-date" name="from-date">
+          <input style="margin-right: 30px;" type="date" id="from-date" name="from-date" onchange="filter()">
           <label style="margin-right: 30px" for="to-date">to:</label>
-          <input style="margin-right: 30px;" type="date" id="to-date" name="to-date">
+          <input style="margin-right: 30px;" type="date" id="to-date" name="to-date" onchange="filter()">
       </div>
 	
 	
