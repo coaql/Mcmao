@@ -26,7 +26,6 @@ $(document).ready(function()
 		e.preventDefault();
 	});
 	report();
-	draw_data();
 });
 
 
