@@ -22,8 +22,8 @@ function drawChart()
 							{ return g[0]==f.date }); 
 							
 							row = [];
-							var date = f.date.split('-');
-							date = date.pop().toString();//+'/' +date.pop().toString();
+							var date = f.date
+							//date = date.pop().toString()+date.pop().toString();
 							if(i >= 0 )
 							{
 								for(cat in cats)
