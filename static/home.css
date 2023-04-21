@@ -221,19 +221,22 @@ canvas{
 #content .left-panel
 {
         margin:15px;
-
 }
 #content .right-panel
 {  
         margin:15px;
         padding: 15px;
         border-radius: 25px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 #content .right-panel form
 {
   display: flex;
   flex-direction: column;
   margin-right: 10% ;
+  align-items: center;
 }
 #content .right-panel form input,
 #content .right-panel form select
@@ -255,5 +258,12 @@ canvas{
 #add-stat
 {
 	width: fit-content;
+}
+
+#myChart
+{
+	width: 900px;
+	max-width: 1200px;
+	height: 450px;
 }
 

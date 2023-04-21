@@ -1,4 +1,3 @@
-import warnings
 from flask import Flask, render_template, request, redirect, session, jsonify
 from flask_session import Session
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -32,14 +31,12 @@ def salt():
 @app.route("/")
 def home():
     #check if the user have the session key
-    warnings.filterwarnings("ignore", category=DeprecationWarning)
     if not session.get("username") :
         return redirect("/register")
     return render_template("home.html", category = CATEGORY)
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    warnings.filterwarnings("ignore", category=DeprecationWarning)
     if request.method == "POST" :
         user_dict = db.execute('SELECT username from user_auth')
         #check for exiting usernames
@@ -57,7 +54,6 @@ def register():
 # fetch db and iterate over every dict to verify username and hash
 @app.route("/login", methods=['POST','GET'])
 def login():
-    warnings.filterwarnings("ignore", category=DeprecationWarning)
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
@@ -75,20 +71,17 @@ def login():
 
 @app.route("/logout")
 def logout():
-    warnings.filterwarnings("ignore", category=DeprecationWarning)
     session["username"] = None
     return redirect("/")
 
 @app.route("/statement")
 def statement():
-    warnings.filterwarnings("ignore", category=DeprecationWarning)
     if not session.get("username"):
         return redirect("/")
     return render_template("statement.html", category = CATEGORY)
 
 @app.route("/ledge", methods=['GET','POST'])
 def write():
-    warnings.filterwarnings("ignore", category=DeprecationWarning)
     if session.get("username") :
         if request.method == 'POST':
             amount, date, description, category = request.form.get('amount'), request.form.get('date'), request.form.get('description'), request.form.get('category')
@@ -118,15 +111,15 @@ def goals():
 
 @app.route("/profile")
 def profile():
-    warnings.filterwarnings("ignore", category=DeprecationWarning)
     return '<h1>'+session.get("username")+'</h1>'+'<form action="/logout"><input type="submit" value="logout"/></form>'
 
 @app.route('/draw')
 def draw():
-    warnings.filterwarnings("ignore", category=DeprecationWarning)
     data = dict()
+    juice = dict()
     cats = db.execute('select category from statements where username = ? group by category',session['username'])
     data['category'] = cats
     for cat in cats:
-        data[cat['category']] = db.execute('select sum(amount) as Total, date from statements where category = ? and username =? group by date',cat['category'],session['username'])
+        juice[cat['category']] = db.execute('select sum(amount) as Total, date from statements where category = ? and username =? group by date',cat['category'],session['username'])
+        data['juice'] = juice
     return jsonify(data)
