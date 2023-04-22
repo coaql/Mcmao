@@ -24,8 +24,10 @@ $(document).ready(function()
 			report();
 		}
 		e.preventDefault();
+		report();
+		drawChart();
 	});
-	report();
+		report();
 });
 
 

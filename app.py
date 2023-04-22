@@ -111,15 +111,15 @@ def goals():
 
 @app.route("/profile")
 def profile():
-    return '<h1>'+session.get("username")+'</h1>'+'<form action="/logout"><input type="submit" value="logout"/></form>'
+    return render_template("profile.html",name = session.get("username"))
 
 @app.route('/draw')
 def draw():
     data = dict()
     juice = dict()
-    cats = db.execute('select category from statements where username = ? group by category',session['username'])
+    cats = db.execute('select category from statements where username = ? and date > date("now","-1 month") and date < date("now") group by category',session['username'])
     data['category'] = cats
     for cat in cats:
-        juice[cat['category']] = db.execute('select sum(amount) as Total, date from statements where category = ? and username =? group by date',cat['category'],session['username'])
+        juice[cat['category']] = db.execute('select sum(amount) as Total, date from statements where date > date("now","-1 month") and date< date("now") and category = ? and username =? group by date',cat['category'],session['username'])
         data['juice'] = juice
     return jsonify(data)
