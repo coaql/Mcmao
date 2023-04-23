@@ -120,6 +120,6 @@ def draw():
     cats = db.execute('select category from statements where username = ? and date > date("now","-1 month") and date < date("now") group by category',session['username'])
     data['category'] = cats
     for cat in cats:
-        juice[cat['category']] = db.execute('select sum(amount) as Total, date from statements where date > date("now","-1 month") and date< date("now") and category = ? and username =? group by date',cat['category'],session['username'])
+        juice[cat['category']] = db.execute('select sum(amount) as Total, date from statements where date > date("now","-1 month") and date <= date("now") and category = ? and username =? group by date',cat['category'],session['username'])
         data['juice'] = juice
     return jsonify(data)
