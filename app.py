@@ -123,3 +123,8 @@ def draw():
         juice[cat['category']] = db.execute('select sum(amount) as Total, date from statements where date > date("now","-1 month") and date <= date("now") and category = ? and username =? group by date',cat['category'],session['username'])
         data['juice'] = juice
     return jsonify(data)
+
+@app.route("/test")
+def test():
+    return render_template("unsuccess.html")
+	

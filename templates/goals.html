@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
+{% extends "layout.html" %} 
+{%block head%}
     <title>Goal</title>
-    <link rel="stylesheet" type="text/css" href="static/home.css">
     <link rel="stylesheet" type="text/css" href="static/goals.css">
-  </head>
-  <body>
+{%endblock%}
+{%block body%}
     <header>
 	    <div class="logo"> 
 		    <h1 > MO </h1>
@@ -25,7 +22,7 @@
 
     <div class="container">
       <h1>Add Goals</h1>
-      <form id="add-goal-form">
+      <form id="add-goal-form" action="/goalit" method="get">
         <label for="goal-name">Goal Name:</label>
         <input type="text" id="goal-name" name="goal-name" required>
         <label for="goal-description">Goal Description:</label>
@@ -56,5 +53,5 @@
       </table>
     </div>
     <script src="static/goals.js"></script>
-  </body>
-</html>
+{%endblock%}
+

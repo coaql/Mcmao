@@ -25,7 +25,7 @@ overflow-x: scroll;
 table {
 border-collapse: collapse;
 overflow: scroll;
-width: 100%;
+width: 100% !important;
 text-align: left;
 }
 th,
@@ -35,7 +35,7 @@ td {
 border-bottom: 1px solid #ddd;
 }
 th {
-background-color: #333;
+background-color: #333 !important;
 color: #fff;
 }
 tr:nth-child(even) {

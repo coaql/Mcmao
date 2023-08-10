@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">  
-    <title>Notes App in JavaScript |</title>
+{% extends "layout.html" %}
+{%block head%}
+   <title>Notes</title>
     <link rel="stylesheet" href="static/notes.css">
-    <link rel="stylesheet" href="static/home.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Iconscout Link For Icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  </head>
-  <body>
+{%endblock%}
+
+{%block body%}
     <header>
 	    <div class="logo"> 
 		    <h1 > MO </h1>
@@ -63,6 +58,4 @@
     </div>
 
     <script src="static/notes.js"></script>
-    
-  </body>
-</html>
+{%endblock%}

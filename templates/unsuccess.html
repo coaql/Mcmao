@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
-    <h3 style="text-align: left;">Unsuccesfull login atempt, <a href="/register"> try again</a>.</h3>
+<br>
+<br>
+<div id="error-message" style="display:inline-flex; align-items: flex-end; justify-content:center" >
+    <img src="/static/title.png" alt="McMao logo" width="25%" height="25%">
+    <h3 style="text-align: left;">Something went wrong, <i><a href="/register">go back</a><i>.</h3>
+</div>
 
 {%endblock%}

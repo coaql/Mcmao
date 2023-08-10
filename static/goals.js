@@ -1,7 +1,16 @@
+
+$(document).ready(function()
+{	$('#add-stat').on('submit',function(e)
+	{
+
+//this var will be used to reset the form
 const form = document.getElementById("add-goal-form");
+//later used to insert rows in the table 
 const table = document.getElementById("goals-table").getElementsByTagName('tbody')[0];
 
 form.addEventListener("submit", function(event) {
+// after this click form should get submitted to db
+//use another function to load already added goals 
   event.preventDefault();
   const name = document.getElementById("goal-name").value;
   const description = document.getElementById("goal-description").value;
