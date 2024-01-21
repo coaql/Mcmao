@@ -4,22 +4,8 @@
     <link rel="stylesheet" type="text/css" href="static/goals.css">
 {%endblock%}
 {%block body%}
-    <header>
-	    <div class="logo"> 
-		    <h1 > MO </h1>
-		    <h2 > McMao </h2>
-		</div>
-		<nav>
-			<ul>
-				<li><a href="/"> Dashboard</a></li>
-				<li><a href="/statement">Statements</a></li>
-				<li><a href="/goals" class="active">Goals</a></li>
-				<li><a href="/notes">Notes</a></li>
-				<li><a href="/profile">Profile</a></li>
-			</ul>
-		</nav>
-	</header>
-
+{%block header%}
+{%endblock%}
     <div class="container">
       <h1>Add Goals</h1>
       <form id="add-goal-form" action="/goalit" method="get">
