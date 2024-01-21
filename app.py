@@ -99,16 +99,6 @@ def write():
     else:
         return redirect("/")
 
-
-
-@app.route("/notes")
-def notes():
-    return render_template("notes.html")
-
-@app.route("/goals")
-def goals():
-    return render_template("goals.html")
-
 @app.route("/profile")
 def profile():
     return render_template("profile.html",name = session.get("username"))
